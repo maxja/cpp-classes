@@ -7,7 +7,13 @@ using namespace std;
 
 // Simple structure that represents complex number
 struct complex_num {
+private:
     double re, im;
+public:
+    void set(double a_re, double a_im) {
+        re = a_re;
+        im = a_im;
+    }
 
     // Member-function or method
     double modulo() const { return sqrt(re * re + im * im); }
@@ -17,12 +23,16 @@ struct complex_num {
 };
 
 // C-style function
+/* Won't work any more
 double modulo_c(complex_num *c) {
     return sqrt(c->re * c->re + c->im * c->im);
 }
+ */
 
 int main() {
-    complex_num n{2.7, 3.8};
+    complex_num n;
+    // Bad practice, non-identifiable state
+    n.set(2.7, 3.8);
 
     // Call member-function
     double mod;
@@ -33,10 +43,12 @@ int main() {
     mod_i = n.implicit_modulo();
 
     // Invoke C-style function
+    /*
     double mod_c;
     mod_c = modulo_c(&n);
+    */
 
-    std::cout << mod << "\n" << mod_i << "\n" << mod_c << std::endl;
+    std::cout << mod << "\n" << mod_i << "\n" << std::endl;
 
     return 0;
 }
