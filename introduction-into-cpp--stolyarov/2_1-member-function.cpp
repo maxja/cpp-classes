@@ -7,20 +7,20 @@ using namespace std;
 
 struct complex_num {
 private:
-    double re, im;
+    double mod, arg;
 public:
-    complex_num(double a_re, double a_im) {
-        re = a_re;
-        im = a_im;
+    complex_num(double re, double im) {
+        mod = sqrt(re * re + im * im);
+        arg = atan2(im, re);
     }
 
-    double get_re() { return re; }
+    double get_re() { return mod * cos(arg); }
 
-    double get_im() { return im; }
+    double get_im() { return mod * sin(arg); }
 
-    double modulo() { return sqrt(re * re + im * im); }
+    double modulo() { return mod; }
 
-    double argument() { return atan2(im, re); }
+    double argument() { return arg; }
 };
 
 int main() {
