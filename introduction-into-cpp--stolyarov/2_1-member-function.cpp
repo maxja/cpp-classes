@@ -5,7 +5,6 @@
 
 using namespace std;
 
-// Simple structure that represents complex number
 struct complex_num {
 private:
     double re, im;
@@ -15,17 +14,18 @@ public:
         im = a_im;
     }
 
-    // Member-function or method
-    double modulo() const { return sqrt(re * re + im * im); }
+    double get_re() { return re; }
+
+    double get_im() { return im; }
+
+    double modulo() { return sqrt(re * re + im * im); }
+
+    double argument() { return atan2(im, re); }
 };
 
 int main() {
-    // Setup instance via constructor
-    complex_num n(2.7, 3.8);
-
-    // Call member-function
     double mod;
-    mod = n.modulo();
+    mod = complex_num(2.7, 3.8).modulo();
 
     std::cout << mod << std::endl;
 
