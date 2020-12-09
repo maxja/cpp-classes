@@ -11,6 +11,8 @@ public:
         im = a_im;
     }
 
+    ~Complex() {}
+
     double get_re() { return re; }
 
     double get_im() { return im; }
