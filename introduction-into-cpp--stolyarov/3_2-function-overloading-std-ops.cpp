@@ -34,11 +34,17 @@ public:
     }
 };
 
+void f(Complex a) {
+    std::cout << a.get_re() << "\n";
+}
+
 int main() {
     Complex a { 1.0, 2.0 };
     Complex b(1.3);
     Complex c;
     Complex d = a + b + c;
+
+    f(2.7);
 
     std::cout << a.get_re() << "\n";
     std::cout << b.get_re() << "\n";
