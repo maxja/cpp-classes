@@ -14,4 +14,4 @@ endif ()
 include_directories(.)
 
 add_executable(cpp_classes
-        introduction-into-cpp--stolyarov/3_2-function-overloading-std-ops.cpp)
+        introduction-into-cpp--stolyarov/3_5-reference.cpp)
