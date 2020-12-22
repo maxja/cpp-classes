@@ -4,10 +4,8 @@
 class Complex {
     double re, im;
 public:
-    Complex(double a_re, double a_im) { 
-        re = a_re; 
-        im = a_im;
-    }
+    Complex(double a_re, double a_im) { re = a_re; im = a_im; }
+    Complex(double a) { re = a; im = 0;  }
     Complex() { re = 0; im = 0; }
     ~Complex() {}
 
@@ -38,13 +36,14 @@ public:
 
 int main() {
     Complex a { 1.0, 2.0 };
-    Complex b;
-    Complex c = a + b;
+    Complex b(1.3);
+    Complex c;
+    Complex d = a + b + c;
 
     std::cout << a.get_re() << "\n";
     std::cout << b.get_re() << "\n";
     std::cout << c.get_re() << "\n";
-    std::cout << c.get_im() << "\n";
+    std::cout << d.modulo() << "\n";
 
     return 0;
 }
