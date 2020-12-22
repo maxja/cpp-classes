@@ -8,6 +8,7 @@ public:
         re = a_re; 
         im = a_im;
     }
+    Complex() { re = 0; im = 0; }
     ~Complex() {}
 
     double modulo() { return sqrt(re*re + im*im); }
@@ -37,7 +38,7 @@ public:
 
 int main() {
     Complex a { 1.0, 2.0 };
-    Complex b { 2.0, 3.0 };
+    Complex b;
     Complex c = a + b;
 
     std::cout << a.get_re() << "\n";
